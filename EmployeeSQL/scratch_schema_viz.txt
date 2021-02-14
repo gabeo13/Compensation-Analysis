@@ -1,0 +1,42 @@
+#Scratch Code for https://app.quickdatabasediagrams.com/#/d/13GDiB
+
+Departments as d
+rel - de.dept_no
+-
+dept_no varchar pk
+dept_name varchar
+
+Dept_Emp as de
+rel - e.emp_no
+-
+emp_no int pk
+dept_no varchar pk
+
+Dept_Manager as dm
+rel - e.emp_no
+-
+emp_no int pk 
+dept_no varchar fk - d.dept_no
+
+Employees as e
+-
+emp_no int pk
+emp_title varchar fk - t.title_id
+birth_date date
+first_name varchar
+last_name varchar
+sex char
+hire_date date
+
+Salaries as s
+rel - e.emp_no
+-
+emp_no int pk
+salary int
+
+Titles as t
+-
+title_id varchar pk
+title varchar
+
+
